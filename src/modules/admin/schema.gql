@@ -1,0 +1,16 @@
+type Query {
+	login(email: String!, password: String!): Responce!
+}
+
+type Responce {
+	token: String
+	status: Int
+	message: String
+	data: Admin
+}
+
+type Admin {
+	id: Int
+	email: String
+	password: String
+}

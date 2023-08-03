@@ -1,0 +1,38 @@
+type Query {
+	restaurants: [Restaurant!]
+	restaurantById(id: Int!): ResponceRestaurant!
+}
+
+type Mutation {
+	restaurantAdd(name: String!, address: String!, image: String!): ResponceRestaurant!
+	updateRrestaurant(name: String!, address: String!, image: String!, id: Int!): ResponceRestaurant!
+	deleteRestaurant(id: Int!): ResponceRestaurant!
+}
+
+type ResponceRestaurant {
+	status: Int!
+	message: String!
+	data: Restaurant
+}
+
+type Restaurant {
+	id: Int
+	name: String
+	address: String
+	image: String
+	foods: [Food]
+	created_at: String
+	updated_at: String
+	deleted_at: String
+}
+
+type Food {
+	id: Int
+	name: String
+	price: Int
+	restaurant: Restaurant
+	image: String
+	created_at: String
+	updated_at: String
+	deleted_at: String
+}

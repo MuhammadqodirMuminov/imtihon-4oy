@@ -1,0 +1,29 @@
+type Query {
+	orders: [Order!]
+	order(id: Int!): ResponseOrder!
+}
+
+type Mutation {
+	addOrder(
+		foodId: Int!
+		count: Int!
+		totalPrice: Int!
+		userName: String!
+		userEmail: String!
+	): ResponseOrder
+}
+
+type ResponseOrder {
+	status: Int!
+	message: String!
+	data: Order
+}
+
+type Order {
+	id: Int!
+	foodId: Int!
+	count: Int!
+	totalPrice: Int!
+	userName: String
+	userEmail: String
+}
